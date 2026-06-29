@@ -1,3 +1,20 @@
 <html>
-  <h1>My website</h1>
+<h1>My website</h1>
+<input type="text" id="todo-input">
+<button id="todoBtn">新任务</button>
+<ul id="todoList"></ul>
+<script>
+  const todoInput = document.getElementById('todo-input')
+  const todoList = document.getElementById('todoList')
+  const todoBtn = document.getElementById('todoBtn')
+  todoBtn.addEventListener("click", () => {
+    if (todoInput.value !== "") {
+      const newTodo = document.createElement("li")
+      newTodo.textContent = todoInput.value
+      todoInput.value = ""
+      todoList.appendChild(newTodo)
+    }
+  })
+</script>
+
 </html>
